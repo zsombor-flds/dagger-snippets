@@ -1,0 +1,13 @@
+repos:
+- repo: https://github.com/Montreal-Analytics/dbt-gloss
+  rev: v1.0.0
+  hooks:
+  - id: check-script-semicolon
+  - id: check-script-has-no-table-name
+    name: Check columns - intermediate
+    files: ^models/intermediate
+  - id: check-model-has-all-columns
+    name: Check columns - mart
+    files: ^models/mart
+  - id: check-model-columns-have-desc
+    files: ^models/mart
