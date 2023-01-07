@@ -1,4 +1,4 @@
-name: dagger-sqlfmt
+name: dagger
 on:
   push:
     branches: [main]
@@ -17,5 +17,7 @@ jobs:
           python -m pip install --upgrade pip
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
           pip install dagger-io
-      - name: Run Dagger pipeline
+      - name: Run sqlfmt pipeline
         run: python sqlfmt.py
+      - name: Run pre-commit pipeline
+        run: python pre-commit.py
