@@ -21,3 +21,5 @@ jobs:
         run: python sqlfmt.py
       - name: Run pre-commit pipeline
         run: python pre-commit.py
+      - name: Run docker build pipeline
+        run: python docker-build.py
