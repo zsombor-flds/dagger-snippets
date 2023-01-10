@@ -13,8 +13,8 @@ async def test():
         python = (
             client.container()
             .from_("python:3.10-slim-buster")
-            .with_mounted_directory("/demo", src)
-            .with_workdir("/demo/")
+            .with_mounted_directory("/dbt_project_demo", src)
+            .with_workdir("/dbt_project_demo/")
             .with_exec(["apt", "update", "-y"])
             .with_exec(["apt", "install", "-y", "git"])
             .with_exec(["pip", "install", "pre-commit"])
